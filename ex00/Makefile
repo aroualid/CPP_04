@@ -3,7 +3,7 @@ CXX = c++
 CXXFLAGS=  -Wall -Wextra -Werror -g3 -std=c++98 -MMD
 
 OBJ_PATH = obj/
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ_NAME = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 
