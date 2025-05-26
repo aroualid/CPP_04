@@ -4,11 +4,13 @@
 Dog::Dog(): Animal("Dog")
 {
 	std::cout << "Dog Constructor called\n";
+	DogBrain = new Brain();
 }
 
 Dog::~Dog()
 {
 	std::cout << "Dog Destructor called\n";
+	delete DogBrain;
 }
 
 Dog::Dog(Dog const & src)

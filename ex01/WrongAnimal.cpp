@@ -9,7 +9,7 @@ WrongAnimal::WrongAnimal(std::string type) : type(type)
 
 WrongAnimal::WrongAnimal(): type("WrongAnimal")
 {
-	std::cout << "WrongAnimal Constructor called\n";
+	std::cout << "WrongAnimal Constructorr called\n";
 }
 
 WrongAnimal::~WrongAnimal()
