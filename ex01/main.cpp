@@ -1,59 +1,55 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "Animal.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 #include <iostream>
 
 int main()
 {
-	std::cout << "expected output in (): \n";
-	std::cout << "___________________________CONSTRUCTOR___________________________"<< std::endl;
+	Animal *animals[100];
+	
+	std::cout << "50 New DOGS \n";
+	std::cout << "__________________________________________________________________"<< std::endl;
+	for (int i = 0; i < 50; i++){
+		animals[i] = new Dog;
+	}
+	std::cout << "50 New CATS \n";
+	std::cout << "__________________________________________________________________"<< std::endl;
+	for (int i = 50; i < 100; i++){
+		animals[i] = new Cat;
+	}
+	std::cout << "__________________________________________________________________"<< std::endl;
 	std::cout << std::endl;
-
-	const Animal* meta = new Animal();
+	std::cout << "__________________________________________________________________"<< std::endl;
+	for(int i = 40; i < 60; i++){
+		std::cout << i <<  "   ";
+		animals[i]->makeSound();
+	}
+	std::cout << "__________________________________________________________________"<< std::endl;
+	for(int i = 0; i < 100; i++){
+		delete (animals[i]);
+	}
+	
+	std::cout << "__________________________________________________________________"<< std::endl;
+	std::cout << std::endl;
+	std::cout << "__________________________________________________________________"<< std::endl;
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	const WrongAnimal* k = new WrongAnimal();
-	const WrongAnimal* l = new WrongCat();
 	
+	Dog Dog1;
+	Cat Cat1;
+	Dog Dog2;
+	Cat Cat2;
+	Dog2 = Dog1;
+	Cat2 = Cat1;
+	Dog2.newIdea(5,"chihuahua");
+	Cat2.newIdea(5,"maincoon");
+	Dog1.displayIdea(5);
+	Dog2.displayIdea(5);
+	Cat1.displayIdea(5);
+	Cat2.displayIdea(5);
 	std::cout << "__________________________________________________________________"<< std::endl;
-	std::cout << std::endl;
-	
-	std::cout << meta->getType() << "	(Animal) " << std::endl;
-	std::cout << j->getType() << "	(Dog) " << std::endl;
-	std::cout << i->getType() << "	(Cat) " << std::endl;
-
-	std::cout << "__________________________________________________________________"<< std::endl;
-	std::cout << std::endl;
-	
-	std::cout << i->getType() << " sound is : ";
-	i->makeSound();
-	std::cout << j->getType() << " sound is : ";
-	j->makeSound();
-	std::cout << meta->getType() << " sound is : ";
-	meta->makeSound();
-
-	std::cout << "__________________________________________________________________"<< std::endl;
-	std::cout << std::endl;
-	
-	std::cout << k->getType() << "	(WrongAnimal) " << std::endl;
-	std::cout << l->getType() << "	(WrongCat)" << std::endl;
-	
-	std::cout << "__________________________________________________________________"<< std::endl;
-	std::cout << std::endl;
-	
-	std::cout << k->getType() << " sound is : ";
-	k->makeSound();
-	std::cout << l->getType() << " sound is : ";
-	l->makeSound();
-	
-	std::cout << "___________________________DESTRUCTOR___________________________"<< std::endl;
-	std::cout << std::endl;
-	
-	delete meta;
+	delete j;//should not create a leak	
 	delete i;
-	delete j;
-	delete k;
-	delete l;
-	return 0;
 }

@@ -29,7 +29,18 @@ std::string Cat::getType() const
 {
 	return (this->type);
 }
+
 void Cat::makeSound(void) const
 {
 	std::cout << "MiaouuuuuuuuuuuuuuuuuuuuuuuuuuuuuU" << std::endl;
+}
+
+void Cat::newIdea(int index, std::string idea)
+{
+	CatBrain->setIdea(index, idea);
+}
+
+void Cat::displayIdea(int index)
+{
+	std::cout << CatBrain->getIdea(index) << std::endl;
 }

@@ -14,6 +14,8 @@ public:
 	Cat &operator=(Cat const & src);
 	void makeSound(void) const;
 	std::string getType() const;
+	void newIdea(int index, std::string idea);
+	void displayIdea(int index);
 private:
 	Brain * CatBrain;
 };

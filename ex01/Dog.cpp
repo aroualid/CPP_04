@@ -28,7 +28,19 @@ std::string Dog::getType() const
 {
 	return (this->type);
 }
+
 void Dog::makeSound(void) const
 {
 	std::cout << "WooufffffffffffffffffffffffffffffF" << std::endl;
 }
+
+void Dog::newIdea(int index, std::string idea)
+{
+	DogBrain->setIdea(index, idea);
+}
+
+void Dog::displayIdea(int index)
+{
+	std::cout << DogBrain->getIdea(index) << std::endl;
+}
+
